@@ -15,19 +15,10 @@ public class ClassFieldVsLocalVar {
         DynaArray dynaArray = new DynaArray();
         for(int val : array){
             if(val > 0){
-                add(dynaArray, val);
+                dynaArray.add(val);
             }
         }
 
         return dynaArray;
-    }
-
-    private static void add(DynaArray dynaArray, int val) {
-        if(dynaArray.counter == dynaArray.result.length){
-            int[] newArray = new int[dynaArray.result.length * 2];
-            System.arraycopy(dynaArray.result, 0, newArray, 0, dynaArray.result.length);
-            dynaArray.result = newArray;
-        }
-        dynaArray.result[dynaArray.counter++] = val;
     }
 }
