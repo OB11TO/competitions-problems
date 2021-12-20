@@ -3,8 +3,28 @@ package section001_classes;
 import java.util.Arrays;
 
 public class DynaArray {
-    int[] result = new int[5];
-    int counter;
+    private int[] result = new int[5];
+    private int counter;
+
+    public DynaArray(int i) {
+        this.counter = i;
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    public int[] getResult() {
+        return result;
+    }
+
+    public void setResult(int[] result) {
+        this.result = result;
+    }
 
     public void add(int val) {
         if (counter == result.length) {

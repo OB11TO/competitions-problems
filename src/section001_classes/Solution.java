@@ -7,8 +7,8 @@ public class Solution {
         int[] array = {1, 2, -3, -4, 5};
         DynaArray result = getPositiveNumbers(array);
 
-        for(int i = 0; i < result.counter; i++){
-            System.out.print(result.result[i]+ " ");
+        for(int i = 0; i < result.getCounter(); i++){
+            System.out.print(result.getResult()[i]+ " ");
         }
         System.out.println();
     }
@@ -21,9 +21,9 @@ public class Solution {
                 result[counter++] = val;
             }
         }
-        DynaArray dynaArray = new DynaArray();
-        dynaArray.result = result;
-        dynaArray.counter = counter;
+        DynaArray dynaArray = new DynaArray(0);
+        dynaArray.setResult(result);
+        dynaArray.setCounter(counter);
         return dynaArray;
     }
 }

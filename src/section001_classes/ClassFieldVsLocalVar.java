@@ -5,14 +5,14 @@ public class ClassFieldVsLocalVar {
         int[] array = {1, -2, 3, 4, -5, 8, 9, 5, 6, 34};
         DynaArray result = getPositiveNumbers(array);
 
-        for(int i = 0; i < result.counter; i++){
-            System.out.print(result.result[i]+ " ");
+        for(int i = 0; i < result.getCounter(); i++){
+            System.out.print(result.getResult()[i]+ " ");
         }
         System.out.println();
     }
 
     private static DynaArray getPositiveNumbers(int[] array) {
-        DynaArray dynaArray = new DynaArray();
+        DynaArray dynaArray = new DynaArray(0);
         for(int val : array){
             if(val > 0){
                 dynaArray.add(val);
