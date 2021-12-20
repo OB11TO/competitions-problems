@@ -1,5 +1,7 @@
 package section001_classes;
 
+import java.util.Arrays;
+
 public class DynaArray {
     int[] result = new int[5];
     int counter;
@@ -11,5 +13,9 @@ public class DynaArray {
             result = newArray;
         }
         result[counter++] = val;
+    }
+
+    public int[] toArray(){
+        return Arrays.copyOf(result,counter);
     }
 }
