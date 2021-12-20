@@ -28,21 +28,22 @@ public class DynaArray {
 
     public void add(int val) {
         if (counter == result.length) {
-            int[] newArray = new int[result.length * 2];
-            System.arraycopy(result, 0, newArray, 0, result.length);
-            result = newArray;
+            grow(result.length * 2);
         }
         result[counter++] = val;
     }
 
     private void add(int val, int num) {
         if (result.length - counter < num) {
-            int[] newArray = new int[counter + num];
-            System.arraycopy(result, 0, newArray, 0, result.length);
-            result = newArray;
+            grow(counter + num);
         }
         result[counter++] = val;
 
+    }
+    private void grow(int length){
+        int[] newArray = new int[length];
+        System.arraycopy(result, 0, newArray, 0, result.length);
+        result = newArray;
     }
 
     public void add(int[] array) {
