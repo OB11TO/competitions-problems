@@ -35,6 +35,17 @@ public class DynaArray {
         result[counter++] = val;
     }
 
+    public void add(int[] array){
+        for(int val: array){
+            add(val);
+        }
+    }
+
+    public void add(DynaArray dynaArray){
+        for(int i = 0; i < dynaArray.counter; i++){
+            add(dynaArray.result[i]);
+        }
+    }
     public int[] toArray() {
         return Arrays.copyOf(result, counter);
     }
