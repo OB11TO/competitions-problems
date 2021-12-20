@@ -17,11 +17,13 @@ public class DynaArrayTest {
 
         dynaArray1.add(5);
         dynaArray1.add(5);
-        dynaArray1.add(5);
+        dynaArray1.add(4);
         dynaArray1.add(5);
         dynaArray1.add(5);
         dynaArray1.add(5);
 
+        System.out.println("------------------------------------");
+        System.out.println(dynaArray1.asString());
         System.out.println("------------------------------------");
 
         System.out.print("dynaArray1: ");
