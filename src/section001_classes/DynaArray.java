@@ -35,17 +35,32 @@ public class DynaArray {
         result[counter++] = val;
     }
 
-    public void add(int[] array){
-        for(int val: array){
-            add(val);
+    private void add(int val, int num) {
+        if (result.length - counter < num) {
+            int[] newArray = new int[counter + num];
+            System.arraycopy(result, 0, newArray, 0, result.length);
+            result = newArray;
+        }
+        result[counter++] = val;
+
+    }
+
+    public void add(int[] array) {
+        int num = array.length;
+        for (int val : array) {
+            add(val, num);
+            num--;
         }
     }
 
-    public void add(DynaArray dynaArray){
-        for(int i = 0; i < dynaArray.counter; i++){
-            add(dynaArray.result[i]);
+    public void add(DynaArray dynaArray) {
+        int num = dynaArray.result.length;
+        for (int i = 0; i < dynaArray.counter; i++) {
+            add(dynaArray.result[i], num);
+            num--;
         }
     }
+
     public int[] toArray() {
         return Arrays.copyOf(result, counter);
     }
@@ -54,18 +69,10 @@ public class DynaArray {
         final StringBuilder sb = new StringBuilder().append('[');
         for (int i = 0; i < counter; i++) {
             sb.append(result[i]);
-            if(i < counter - 1){
+            if (i < counter - 1) {
                 sb.append(", ");
             }
         }
-     /*
-        if (sb.length() > 0) {
-            sb.deleteCharAt(sb.length() - 1);
-            sb.deleteCharAt(sb.length() - 1).append("]");
-        }
-
-      */
-
         return sb.append("]").toString();
     }
 }
