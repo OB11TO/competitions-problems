@@ -7,13 +7,29 @@ public class DynaArrayTest {
         DynaArray dynaArray1 = new DynaArray();
         DynaArray dynaArray2 = new DynaArray();
 
-        dynaArray1.add(1);
-        dynaArray1.add(2);
-
-        dynaArray2.add(34);
-
+        System.out.print("dynaArray1: ");
+        System.out.print(Arrays.toString(dynaArray1.toArray()) + " ");
         System.out.println(dynaArray1.counter);
-        System.out.println(Arrays.toString(dynaArray1.result));
+
+        System.out.print("dynaArray2: ");
+        System.out.print(Arrays.toString(dynaArray2.toArray()) + " ");
+        System.out.println(dynaArray2.counter);
+
+        dynaArray1.add(5);
+        dynaArray1.add(5);
+        dynaArray1.add(5);
+        dynaArray1.add(5);
+        dynaArray1.add(5);
+        dynaArray1.add(5);
+
+        System.out.println("------------------------------------");
+
+        System.out.print("dynaArray1: ");
+        System.out.print(Arrays.toString(dynaArray1.toArray()) + " ");
+        System.out.println(dynaArray1.counter);
+
+        System.out.print("dynaArray2: ");
+        System.out.print(Arrays.toString(dynaArray2.toArray()) + " ");
         System.out.println(dynaArray2.counter);
     }
 }
