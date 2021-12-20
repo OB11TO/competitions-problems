@@ -25,6 +25,8 @@ public class DynaArrayTest {
         System.out.println("------------------------------------");
         System.out.println(dynaArray1.asString());
         System.out.println("------------------------------------");
+        dynaArray1.add(new int[]{2, 4});
+        dynaArray2.add(dynaArray1);
 
         System.out.print("dynaArray1: ");
         System.out.print(Arrays.toString(dynaArray1.toArray()) + " ");
