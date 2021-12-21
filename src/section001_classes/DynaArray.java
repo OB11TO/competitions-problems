@@ -11,6 +11,10 @@ public class DynaArray {
         this.result = new int[5];
     }
 
+    public DynaArray(int size) {
+        this.result = new int[size];
+    }
+
     public int getCounter() {
         return counter;
     }
@@ -29,7 +33,7 @@ public class DynaArray {
 
     public void add(int val) {
         if (counter == result.length) {
-            grow(result.length * 2);
+            grow(result.length == 0 ? 5 : result.length * 2);
         }
         result[counter++] = val;
     }
@@ -41,7 +45,8 @@ public class DynaArray {
         result[counter++] = val;
 
     }
-    private void grow(int length){
+
+    private void grow(int length) {
         int[] newArray = new int[length];
         System.arraycopy(result, 0, newArray, 0, result.length);
         result = newArray;
