@@ -111,7 +111,8 @@ public class DynaArray {
 
 
     private void removeDetail(int index) {
-        if (counter - 1 - index >= 0) System.arraycopy(result, index + 1, result, index, counter - 1 - index);
+        if (counter - 1 - index >= 0)
+            System.arraycopy(result, index + 1, result, index, counter - 1 - index);
         counter--;
     }
 }
