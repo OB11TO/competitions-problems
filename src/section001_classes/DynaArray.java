@@ -115,4 +115,12 @@ public class DynaArray {
             System.arraycopy(result, index + 1, result, index, counter - 1 - index);
         counter--;
     }
+
+    public int size() {
+        return counter;
+    }
+
+    public boolean contains(int val) {
+        return indexOf(val) != -1;
+    }
 }
