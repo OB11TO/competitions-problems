@@ -82,4 +82,36 @@ public class DynaArray {
         }
         return sb.append("]").toString();
     }
+
+    public void clear() {
+        //Arrays.fill(result, 0, result.length, 0);
+        //this.result = new int[result.length];
+        for (int i = result.length; i > 0; i--) {
+            result[i - 1] = 0;
+        }
+        counter = 0;
+
+    }
+
+    public void remove(int val) {
+        int index = indexOf(val);
+        if (index != -1) {
+            removeDetail(index);
+        }
+    }
+
+    private int indexOf(int val) {
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] == val) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    private void removeDetail(int index) {
+        if (counter - 1 - index >= 0) System.arraycopy(result, index + 1, result, index, counter - 1 - index);
+        counter--;
+    }
 }
