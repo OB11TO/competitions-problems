@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class DynaArrayTest {
     public static void main(String[] args) {
-        DynaArray dynaArray1 = new DynaArray(0);
-        DynaArray dynaArray2 = new DynaArray(0);
+        DynaArray dynaArray1 = new DynaArray();
+        DynaArray dynaArray2 = new DynaArray();
 
         System.out.print("dynaArray1: ");
         System.out.print(Arrays.toString(dynaArray1.toArray()) + " ");
@@ -39,7 +39,7 @@ public class DynaArrayTest {
 }
 class DynaArrayTest2 {
     public static void main(String[] args) {
-        DynaArray dynaArray = new DynaArray(0);
+        DynaArray dynaArray = new DynaArray();
 
         dynaArray.add(0);
         dynaArray.add(1);
@@ -50,7 +50,7 @@ class DynaArrayTest2 {
 
         dynaArray.add(new int[]{9, 8, 7, 6, 5, 4, 3, 2, 1});
 
-        DynaArray dynaArray2 = new DynaArray(0);
+        DynaArray dynaArray2 = new DynaArray();
         dynaArray2.add(new int[]{-9, -8, -7, -6, -5, -4, -3, -2, -1, 0});
         dynaArray.add(dynaArray2);
 

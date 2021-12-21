@@ -21,7 +21,7 @@ public class Solution {
                 result[counter++] = val;
             }
         }
-        DynaArray dynaArray = new DynaArray(0);
+        DynaArray dynaArray = new DynaArray();
         dynaArray.setResult(result);
         dynaArray.setCounter(counter);
         return dynaArray;

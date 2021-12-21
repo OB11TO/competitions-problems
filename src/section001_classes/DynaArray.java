@@ -3,11 +3,12 @@ package section001_classes;
 import java.util.Arrays;
 
 public class DynaArray {
-    private int[] result = new int[5];
+    private int[] result;
     private int counter;
 
-    public DynaArray(int i) {
-        this.counter = i;
+    public DynaArray() {
+        this.counter = 0;
+        this.result = new int[5];
     }
 
     public int getCounter() {

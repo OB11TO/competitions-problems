@@ -12,7 +12,7 @@ public class ClassFieldVsLocalVar {
     }
 
     private static DynaArray getPositiveNumbers(int[] array) {
-        DynaArray dynaArray = new DynaArray(0);
+        DynaArray dynaArray = new DynaArray();
         for(int val : array){
             if(val > 0){
                 dynaArray.add(val);
