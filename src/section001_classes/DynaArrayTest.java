@@ -62,3 +62,11 @@ class DynaArrayTest2 {
         System.out.println(dynaArray.asString());
     }
 }
+
+class DynaArrayTest3 {
+    public static void main(String[] args) {
+        DynaArray dynaArray = new DynaArray(0);
+        dynaArray.add(0);
+        System.out.println(dynaArray.asString());
+    }
+}
