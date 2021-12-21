@@ -37,6 +37,7 @@ public class DynaArrayTest {
         System.out.println(dynaArray2.getCounter());
     }
 }
+
 class DynaArrayTest2 {
     public static void main(String[] args) {
         DynaArray dynaArray = new DynaArray();
@@ -67,6 +68,46 @@ class DynaArrayTest3 {
     public static void main(String[] args) {
         DynaArray dynaArray = new DynaArray(0);
         dynaArray.add(0);
+        System.out.println(dynaArray.asString());
+    }
+}
+
+class DynaArrayTest4 {
+    public static void main(String[] args) {
+        DynaArray dynaArray = new DynaArray();
+        dynaArray.add(0);
+        dynaArray.add(1);
+        dynaArray.add(2);
+        dynaArray.add(3);
+
+        System.out.println(dynaArray.asString());
+
+        dynaArray.clear();
+
+        System.out.println(dynaArray.asString());
+    }
+}
+
+class DynaArrayTest5 {
+    public static void main(String[] args) {
+        DynaArray dynaArray = new DynaArray();
+        dynaArray.add(0);
+        dynaArray.add(1);
+        dynaArray.add(2);
+        dynaArray.add(3);
+
+        System.out.println(dynaArray.asString());
+
+        dynaArray.remove(5);
+        // [0, 1, 2, 3]
+        System.out.println(dynaArray.asString());
+
+        dynaArray.remove(0);
+        // [1, 2, 3]
+        System.out.println(dynaArray.asString());
+
+        dynaArray.remove(2);
+        // [1, 3]
         System.out.println(dynaArray.asString());
     }
 }
