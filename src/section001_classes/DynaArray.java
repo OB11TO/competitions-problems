@@ -84,8 +84,6 @@ public class DynaArray {
     }
 
     public void clear() {
-        //Arrays.fill(result, 0, result.length, 0);
-        //this.result = new int[result.length];
         for (int i = result.length; i > 0; i--) {
             result[i - 1] = 0;
         }
