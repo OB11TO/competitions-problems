@@ -11,7 +11,7 @@ public class T1Cat {
         Cat d = new Cat("Drt", 1);
         Cat e = new Cat("Ert", 12);
 
-        System.out.println();
+
 
         System.out.println(sgn(a.compareTo(b)) == -sgn(b.compareTo(a)));
         System.out.println((a.compareTo(b) > 0 && b.compareTo(d) >0) && a.compareTo(d) > 0);
@@ -23,6 +23,20 @@ public class T1Cat {
         System.out.println(a.compareTo(b) != 0 && !a.equals(b));
         System.out.println(a.compareTo(e) != 0 && !a.equals(e));
 
+        System.out.println();
+
+
+        Cat[] cats = new Cat[] {a, b, c, d , e};
+        for(Cat cat : cats){
+            System.out.println(cat);
+        }
+        System.out.println();
+
+        Arrays.sort(cats);
+
+        for(Cat cat : cats){
+            System.out.println(cat);
+        }
 
 
     }
@@ -35,8 +49,8 @@ public class T1Cat {
 }
 
 class Cat implements Comparable<Cat> {
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
 
     public Cat(String name, int age) {
         super();
@@ -44,25 +58,6 @@ class Cat implements Comparable<Cat> {
         this.age = age;
     }
 
-    public Cat() {
-        super();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     @Override
     public String toString() {
