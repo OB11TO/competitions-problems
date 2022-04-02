@@ -1,6 +1,9 @@
 package javaDEV.L2.Generics.GameSmulatorPrac;
 
-public class Archer extends Hero {
+
+import javaDEV.L2.Generics.GameSmulatorPrac.genericInterface.RangeWeapon;
+
+public class Archer<T extends RangeWeapon> extends Hero<T> {
 
     private final Wolf wolf;
 

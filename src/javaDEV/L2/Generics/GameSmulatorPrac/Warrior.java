@@ -1,6 +1,8 @@
 package javaDEV.L2.Generics.GameSmulatorPrac;
 
-public class Warrior extends Hero {
+import javaDEV.L2.Generics.GameSmulatorPrac.genericInterface.MeleeWeapon;
+
+public class Warrior<T extends MeleeWeapon> extends Hero<T> {
 
     public Warrior(String name, int damage) {
         super(name, damage);
