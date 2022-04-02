@@ -1,23 +1,30 @@
 package javaDEV.L2.Generics.GameSmulatorPrac;
 
+import javaDEV.L2.Generics.GameSmulatorPrac.genericInterface.Bow;
+import javaDEV.L2.Generics.GameSmulatorPrac.genericInterface.Sword;
+import javaDEV.L2.Generics.GameSmulatorPrac.genericInterface.Wand;
+import javaDEV.L2.Generics.GameSmulatorPrac.genericInterface.Weapon;
+
 public class TrainingGround {
 
     public static void main(String[] args) {
-        Hero warrior = new Warrior("Боромир", 15);
-        Hero mage = new Mage("Гэндольф", 20);
-        Archer archer = new Archer("Леголас", 10);
+        Hero<Sword> warrior = new Warrior<>("Боромир", 15);
+        Hero<Wand> mage = new Mage<>("Гэндольф", 20);
+        Archer<Bow> archer = new Archer<>("Леголас", 10);
 
-//        Wolf wolf = new Wolf("Second wolf", 11);
-        Archer.Wolf wolf = archer.new Wolf("Second wolf", 11);
+        /*        Wolf wolf = new Wolf("Second wolf", 11);*/
+        // Archer<Bow>.Wolf wolf = archer.new Wolf("Second wolf", 11);
 
         Enemy enemy = new Enemy("Зомби", 100);
 
         attackEnemy(enemy, warrior, mage, archer);
     }
 
-    public static void attackEnemy(Enemy enemy, Hero... heroes) {
+
+    @SafeVarargs
+    public static void attackEnemy(Enemy enemy, Hero<? extends Weapon>... heroes) {
         while (enemy.isAlive()) {
-            for (Hero hero : heroes) {
+            for (Hero<?> hero : heroes) {
                 if (enemy.isAlive()) {
                     hero.attackEnemy(enemy);
                 }
