@@ -20,6 +20,12 @@ public class RunnerWeapon {
 
         Enemy enemy = new Enemy("Зомби", 150);
 
-        TrainingGround.attackEnemy(enemy, warrior, mage, archer);
+        //TrainingGround.attackEnemy(enemy, warrior, mage, archer);
+
+        printWeaponDamage(archer2);
+    }
+
+    public static <T extends Weapon> void printWeaponDamage(Hero<T> hero){
+       System.out.println(hero.getWeapon().getDamage());
     }
 }
