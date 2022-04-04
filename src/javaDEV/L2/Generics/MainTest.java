@@ -1,5 +1,7 @@
 package javaDEV.L2.Generics;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Iterator;
 
 public class MainTest {
@@ -14,7 +16,6 @@ public class MainTest {
       for(Iterator<String> iterator = objects.iterator(); iterator.hasNext(); ){
           System.out.println(iterator.next());
       }
-
 
         System.out.println(objects.get(3));
 
