@@ -1,6 +1,8 @@
 package javaDEV.L2.Generics;
 
-public class ListObject<T> {
+import java.util.Iterator;
+
+public class ListObject<T> implements Iterable<T> {
     private final T[] objects;
     private int size;
 
@@ -18,5 +20,25 @@ public class ListObject<T> {
 
     public int getSize() {
         return size;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<T>{
+
+        private int counterSize;
+
+        @Override
+        public boolean hasNext() {
+            return counterSize < size;
+        }
+
+        @Override
+        public T next() {
+            return objects[counterSize++];
+        }
     }
 }
