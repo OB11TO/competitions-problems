@@ -10,11 +10,11 @@ import java.util.Scanner;
  * 1. Задан файл с текстом, найти и вывести в консоль все слова,
  * начинающиеся с гласной буквы.
  */
-private class Task1 {
+public class Task1 {
 
-    private static final String VOWEL = "аеоуэяию";
+    public static final String VOWEL = "аеоуэяию";
 
-    private static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         Path path = Path.of("src", "javaDEV", "L2", "IO", "resources", "test.txt");
 
         try (Scanner scanner = new Scanner(path)) {
