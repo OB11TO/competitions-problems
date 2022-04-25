@@ -1,8 +1,7 @@
 package javaDEV.L2.Multithreading.Prac;
 
-import javaDEV.L2.IO.HW.task2.RandomUtil;
-
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 import java.util.Random;
 
@@ -48,7 +47,7 @@ public class Task1 {
 }
 
 class ProducerThread implements Runnable {
-    private Queue<Integer> list;
+    private final Queue<Integer> list;
 
     public ProducerThread(Queue<Integer> numbers) {
         this.list = numbers;
@@ -79,12 +78,7 @@ class ProducerThread implements Runnable {
     }
 }
 
-class ConsumerThread implements Runnable {
-    private Queue<Integer> list;
-
-    public ConsumerThread(Queue<Integer> list) {
-        this.list = list;
-    }
+record ConsumerThread(Queue<Integer> list) implements Runnable {
 
     @Override
     public void run() {
@@ -108,6 +102,21 @@ class ConsumerThread implements Runnable {
         }
 
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        var that = (ConsumerThread) obj;
+        return Objects.equals(this.list, that.list);
+    }
+
+    @Override
+    public String toString() {
+        return "ConsumerThread[" +
+                "list=" + list + ']';
+    }
+
 }
 
 final class RandomUtils {
@@ -121,10 +130,6 @@ final class RandomUtils {
 
     public static int getRandom() {
         return RANDOM.nextInt(DEFAULT_BOUND);
-    }
-
-    public static int getRandom(int bound) {
-        return RANDOM.nextInt(bound);
     }
 
 
