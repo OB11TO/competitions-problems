@@ -183,10 +183,8 @@ from (
          join (
     select count(*), aircraft_id
     from seat
-    group by aircraft_id ) t2
+    group by aircraft_id) t2
               on t2.aircraft_id = t1.aircraft_id;
-
-
 
 
 -- 5 Какие 2 перелета были самые длительные за все время?
@@ -204,14 +202,14 @@ limit 2;
 -- 6 Какая максимальная и минимальная продолжительность перелетов
 -- между Минском и Лондоном и сколько было всего таких перелетов?
 
-select
-            first_value(f.arrival_date - f.departure_date) OVER (order by (f.arrival_date - f.departure_date) desc ) max_value,
-            first_value(f.arrival_date - f.departure_date) OVER (order by (f.arrival_date - f.departure_date)  ) min_value,
-            count(*) OVER ()
-from  flight f
-where departure_airport_code = 'MNK' AND  arrival_airport_code = 'LDN'
+select first_value(f.arrival_date - f.departure_date)
+       OVER (order by (f.arrival_date - f.departure_date) desc )                                           max_value,
+       first_value(f.arrival_date - f.departure_date) OVER (order by (f.arrival_date - f.departure_date) ) min_value,
+       count(*) OVER ()
+from flight f
+where departure_airport_code = 'MNK'
+  AND arrival_airport_code = 'LDN'
 limit 1;
-
 
 
 -- 7 Какие имена встречаются чаще всего и какую долю от числа всех пассажиров они составляют?
@@ -248,11 +246,51 @@ order by 3 desc;
 -- Отобразить разницу в стоимости между текущим и ближайшими в отсортированном списке маршрутами
 
 select t1.*,
-       COALESCE(lead(t1.sum_cost) OVER (order by t1.sum_cost), t1.sum_cost )- t1.sum_cost
+       COALESCE(lead(t1.sum_cost) OVER (order by t1.sum_cost), t1.sum_cost) - t1.sum_cost
 from (select t.flight_id,
              sum(t.cost) sum_cost
 
       from ticket t
       group by t.flight_id
       order by 2 desc) t1;
+
+
+---------------------------TRIGGER-----------------------------
+
+
+-----before
+
+insert into aircraft (model)
+values ('new boeing');
+
+---- after
+
+
+create table audit
+(
+    id         INT,
+    table_name TEXT,
+    date       TIMESTAMP
+);
+
+create or replace function audit_function() returns trigger
+    language plpgsql
+AS
+$$
+BEGIN
+    insert into audit(id, table_name, date)
+    values (new.id, tg_table_name, now());
+    return null;
+END;
+$$;
+
+create trigger audit_aircraft_triggers
+    AFTER UPDATE OR INSERT OR DELETE
+    ON aircraft
+    FOR EACH ROW
+EXECUTE FUNCTION audit_function();
+
+insert into aircraft(model)
+values ('новый боинг');
+
 
