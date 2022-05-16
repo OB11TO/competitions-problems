@@ -1,36 +1,28 @@
--- CREATE DATABASE flight_repository;
+CREATE DATABASE flight_repository;
 
 -- airport (аэропорт)
 --         code (уникальный код аэропорта)
 --              country (страна)
 --                      city (город)
-
-DROP TABLE airport;
-DROP TABLE aircraft;
-DROP TABLE flight;
-DROP TABLE seat;
-DROP TABLE ticket;
-
-CREATE TABLE airport
+create table airport
 (
     code    CHAR(3) PRIMARY KEY,
     country VARCHAR(256) NOT NULL,
     city    VARCHAR(128) NOT NULL
 );
-
--- aircraft (самолет)
---          id
---  	model (модель самолета - unique)
-CREATE TABLE aircraft
+--  aircraft (самолет)
+--  id
+--    model (модель самолета - unique)
+create table aircraft
 (
     id    SERIAL PRIMARY KEY,
     model VARCHAR(128) NOT NULL
 );
 
 -- seat (место в самолете)
---      aircraft_id (самолет)
---                  seat_no (номер места в самолете)
-CREATE TABLE seat
+--    aircraft_id (самолет)
+--    seat_no (номер места в самолете)
+create table seat
 (
     aircraft_id INT REFERENCES aircraft (id),
     seat_no     VARCHAR(4) NOT NULL,
@@ -38,61 +30,44 @@ CREATE TABLE seat
 );
 
 -- flight (рейс)
---        id (номер рейса не уникальный, поэтому нужен id)
---  flight_no (номер рейса)
---  departure_date (дата вылета)
---  departure_airport_code (аэропорт вылета)
---  arrival_date (дата прибытия)
---  arrival_airport_code (аэропорт прибытия)
---  aircraft_id (самолет)
---     status (статус рейса: cancelled, arrived, departed, scheduled)
+--    id (номер рейса не уникальный, поэтому нужен id)
+--    flight_no (номер рейса)
+--    departure_date (дата вылета)
+--    departure_airport_code (аэропорт вылета)
+--    arrival_date (дата прибытия)
+--    arrival_airport_code (аэропорт прибытия)
+--    aircraft_id (самолет)
+--    status (статус рейса: cancelled, arrived, departed, scheduled)
 
-CREATE TABLE flight
+create table flight
 (
-    id                     BIGSERIAL PRIMARY KEY,
-    flight_no              VARCHAR(16)                       NOT NULL,
-    departure_date         TIMESTAMP                         NOT NULL,
-    departure_airport_code CHAR(3) REFERENCES airport (code) NOT NULL,
-    arrival_date           TIMESTAMP                         NOT NULL,
-    arrival_airport_code   CHAR(3) REFERENCES airport (code) NOT NULL,
-    aircraft_id            INT REFERENCES aircraft (id)      NOT NULL,
-    status                 VARCHAR(32)                       NOT NULL
+    id                     SERIAL PRIMARY KEY,
+    flight_no              VARCHAR(132) NOT NULL,
+    departure_date         TIMESTAMP    NOT NULL,
+    departure_airport_code CHAR(3)      NOT NULL,
+    arrival_date           TIMESTAMP    NOT NULL,
+    arrival_airport_code   CHAR(3)      NOT NULL,
+    aircraft_id            INT REFERENCES aircraft (id),
+    status                 VARCHAR(32)  NOT NULL
 );
 
 -- ticket (билет на самолет)
---        id
---  	passenger_no (номер паспорта пассажира)
---  	passenger_name (имя и фамилия пассажира)
---  	flight_id (рейс)
---  	seat_no (номер места в самолете – flight_id + seat-no - unique)
---  	cost (стоимость)
-CREATE TABLE ticket
+--    id
+--    passenger_no (номер паспорта пассажира)
+--    passenger_name (имя и фамилия пассажира)
+--    flight_id (рейс)
+--    seat_no (номер места в самолете – flight_id + seat-no - unique)
+--    cost (стоимость)
+
+create table ticket
 (
     id             BIGSERIAL PRIMARY KEY,
-    passenger_no   VARCHAR(32)                   NOT NULL,
-    passenger_name VARCHAR(128)                  NOT NULL,
-    flight_id      BIGINT REFERENCES flight (id) NOT NULL,
-    seat_no        VARCHAR(4)                    NOT NULL,
-    cost           NUMERIC(8, 2)                 NOT NULL
---     UNIQUE (flight_id, seat_no)
+    passenger_no   VARCHAR(24)   NOT NULL,
+    passenger_name VARCHAR(128)  NOT NULL,
+    flight_id      INT REFERENCES flight (id),
+    seat_no        VARCHAR(4)    NOT NULL,
+    cost           NUMERIC(8, 2) NOT NULL
 );
-
-CREATE UNIQUE INDEX unique_flight_id_seat_no_idx ON ticket (flight_id, seat_no);
--- flight_id + seat_no
-
-select *
-from ticket
-where seat_no = 'B1'
-  and flight_id = 5;
-
-select count(distinct flight_id)
-from ticket;
-select count(*)
-from ticket;
--- 9 / 55
--- 55 / 55 = 1
--- 55 / 55 = 1
-
 
 insert into airport (code, country, city)
 values ('MNK', 'Беларусь', 'Минск'),
@@ -107,7 +82,8 @@ values ('Боинг 777-300'),
        ('Суперджет-100');
 
 insert into seat (aircraft_id, seat_no)
-select id, s.column1
+select id,
+       s.column1
 from aircraft
          cross join (values ('A1'), ('A2'), ('B1'), ('B2'), ('C1'), ('C2'), ('D1'), ('D2') order by 1) s;
 
@@ -180,197 +156,141 @@ values ('112233', 'Иван Иванов', 1, 'A1', 200),
        ('23234A', 'Петр Петров', 9, 'D1', 189),
        ('123951', 'Полина Зверева', 9, 'D2', 234);
 
--- 3.	Кто летел позавчера рейсом Минск (MNK) - Лондон (LDN) на месте B1?
 
-select*
-from ticket
-         join flight f
-              on ticket.flight_id = f.id
-where seat_no = 'B1'
-  and f.departure_airport_code = 'MNK'
-  and f.arrival_airport_code = 'LDN'
-  and f.departure_date::date = (now() - interval '2 days')::date;
-
-
+-- 3 Кто летел позавчера рейсом Минск (MNK) - Лондон (LDN) на месте B1?
 
 select *
 from ticket
          join flight f
-              on ticket.flight_id = f.id
-where seat_no = 'B1'
-  and f.departure_airport_code = 'MNK'
-  and f.arrival_airport_code = 'LDN'
-  and f.departure_date::date = (now() - interval '2 years 2 month 11 days')::date;
-
--- * ---------- *
-select interval '2 years 1 days';
-select (now() - interval '1 years 2 days')::date;
+              on f.id = ticket.flight_id
+                  AND seat_no = 'B1'
+                  AND departure_airport_code = 'MNK'
+                  AND arrival_airport_code = 'LDN';
 
 
-select now(); --2022-04-25 12:38:09.612930 +00:00  2020-06-14 14:30:00.000000
+-- 4 Сколько мест осталось незанятыми 2020-06-14 на рейсе MN3002?
 
-select '123a'::integer;
 
--- 4.	Сколько мест осталось незанятыми 2020-06-14 на рейсе MN3002?
+select t2.count - t1.count freeSead
+from (
+         select count(seat_no),
+                aircraft_id
+         from ticket
+                  join flight f on f.id = ticket.flight_id
+             and flight_no = 'MN3002'
+             and departure_date::date = '2020-06-14'
+         group by aircraft_id) t1
+         join (
+    select count(*), aircraft_id
+    from seat
+    group by aircraft_id) t2
+              on t2.aircraft_id = t1.aircraft_id;
 
-select t2.count - t1.count
-from (select f.aircraft_id, count(*)
-      from ticket t
-               join flight f
-                    on f.id = t.flight_id
-      where f.flight_no = 'MN3002'
-        and f.departure_date::date = '2020-06-14'
-      group by f.aircraft_id) t1
-         join (select aircraft_id, count(*)
-               from seat
-               group by aircraft_id) t2
-              on t1.aircraft_id = t2.aircraft_id;
 
-SELECT EXISTS(select 1 from ticket where id = 2000);
+-- 5 Какие 2 перелета были самые длительные за все время?
 
--- 2 variant
-select count(*)
-from (select s.seat_no
-      from seat s
-      where aircraft_id = 1
-        and not exists(select t.seat_no
-                       from ticket t
-                                join flight f
-                                     on f.id = t.flight_id
-                       where f.flight_no = 'MN3002'
-                         and f.departure_date::date = '2020-06-14'
-                           and s.seat_no = t.seat_no)) as ssn;
-
-select s.seat_no
-from seat s
-where aircraft_id = 1
-  and not exists(select t.seat_no
-                 from ticket t
-                          join flight f
-                               on f.id = t.flight_id
-                 where f.flight_no = 'MN3002'
-                   and f.departure_date::date = '2020-06-14'
-                     and s.seat_no = t.seat_no);
-
--- 3 variant
-select aircraft_id, s.seat_no
-from seat s
-where aircraft_id = 1
-except
-select f.aircraft_id, t.seat_no
-from ticket t
-         join flight f
-              on f.id = t.flight_id
-where f.flight_no = 'MN3002'
-  and f.departure_date::date = '2020-06-14';
-
--- 5.	Какие 2 перелета были самые длительные за все время?
-select f.id,
-       f.arrival_date,
-       f.departure_date,
-       f.arrival_date - f.departure_date
-from flight f
-order by (f.arrival_date - f.departure_date) DESC;
+select id,
+       departure_date,
+       arrival_date,
+       arrival_date - flight.departure_date fly
+from flight
+order by (flight.arrival_date - flight.departure_date) desc
+limit 2;
 
 
 
--- 6.	Какая максимальная и минимальная продолжительность перелетов между Минском и Лондоном
--- и сколько было всего таких перелетов?
+-- 6 Какая максимальная и минимальная продолжительность перелетов
+-- между Минском и Лондоном и сколько было всего таких перелетов?
 
 select first_value(f.arrival_date - f.departure_date)
-           over (order by (f.arrival_date - f.departure_date) desc)                                           max_value,
-        first_value(f.arrival_date - f.departure_date) over (order by (f.arrival_date - f.departure_date)) min_value,
-        count(*) OVER ()
+       OVER (order by (f.arrival_date - f.departure_date) desc )                                           max_value,
+       first_value(f.arrival_date - f.departure_date) OVER (order by (f.arrival_date - f.departure_date) ) min_value,
+       count(*) OVER ()
 from flight f
-         join airport a
-              on a.code = f.arrival_airport_code
-         join airport d
-              on d.code = f.departure_airport_code
-where a.city = 'Лондон'
-  and d.city = 'Минск'
-    limit 1;
+where departure_airport_code = 'MNK'
+  AND arrival_airport_code = 'LDN'
+limit 1;
 
 
+-- 7 Какие имена встречаются чаще всего и какую долю от числа всех пассажиров они составляют?
 
--- 7.	Какие имена встречаются чаще всего и какую долю от числа всех пассажиров они составляют?
--- возвр. имя (параметры)
 select t.passenger_name,
        count(*),
-       round(100.0 * count(*) / (select count(*) from ticket), 2)
+       round(100.0 * count(*) / (select count(*) from ticket), 2) round
 from ticket t
 group by t.passenger_name
 order by 2 desc;
 
 
--- 8.	Вывести имена пассажиров, сколько всего каждый с таким именем купил билетов,
--- а также на сколько это количество меньше от того имени пассажира, кто купил билетов больше всего
+-- 8 Вывести имена пассажиров, сколько всего каждый с таким именем купил билетов,
+-- а также на сколько это количество меньше от того имени пассажира, кто купил билетов больше всего?
 
-select t1.*,
-       first_value(t1.count_ticket) over () - t1.count_ticket
-from (select t.passenger_no,
-             t.passenger_name,
-             count(*) count_ticket
+select first_value(t.cnt) over () - t.cnt
+from (select t.passenger_name,
+             t.passenger_no,
+             count(*) cnt
       from ticket t
-      group by t.passenger_no, t.passenger_name
-      order by 3 desc) t1;
+      group by t.passenger_name, t.passenger_no
+      order by 3 desc) t;
 
 
-select t.passenger_no,
-       t.passenger_name,
-       count(*) count_ticket
+select t.passenger_name,
+       t.passenger_no,
+       count(*) cnt
 from ticket t
-group by t.passenger_no, t.passenger_name
+group by t.passenger_name, t.passenger_no
 order by 3 desc;
 
 
--- 9.	Вывести стоимость всех маршрутов по убыванию.
+--9  Вывести стоимость всех маршрутов по убыванию.
 -- Отобразить разницу в стоимости между текущим и ближайшими в отсортированном списке маршрутами
 
 select t1.*,
        COALESCE(lead(t1.sum_cost) OVER (order by t1.sum_cost), t1.sum_cost) - t1.sum_cost
 from (select t.flight_id,
              sum(t.cost) sum_cost
+
       from ticket t
       group by t.flight_id
       order by 2 desc) t1;
 
 
+---------------------------TRIGGER-----------------------------
 
 
+-----before
 
-values (1, '2'),
-       (3, '4'),
-       (5, '6'),
-       (7, '8')
-except
-values (1, '2'),
-       (2, '4'),
-       (5, '6'),
-       (7, '9');
+insert into aircraft (model)
+values ('new boeing');
+
+---- after
 
 
-select id
-from ticket
-where id = 29;
+create table audit
+(
+    id         INT,
+    table_name TEXT,
+    date       TIMESTAMP
+);
 
+create or replace function audit_function() returns trigger
+    language plpgsql
+AS
+$$
+BEGIN
+    insert into audit(id, table_name, date)
+    values (new.id, tg_table_name, now());
+    return null;
+END;
+$$;
 
-select t1.*,
-       COALESCE(lead(t1.sum_cost) over (order by t1.sum_cost), t1.sum_cost) - t1.sum_cost
-from (select t.flight_id,
-             sum(t.cost) sum_cost
-      from ticket t
-      group by t.flight_id
-      order by 2 desc) t1;
+create trigger audit_aircraft_triggers
+    AFTER UPDATE OR INSERT OR DELETE
+    ON aircraft
+    FOR EACH ROW
+EXECUTE FUNCTION audit_function();
 
-select t.flight_id,
-       sum(t.cost)
-from ticket t
-group by t.flight_id
-order by 2 desc;
-
-
-
-
-
+insert into aircraft(model)
+values ('новый боинг');
 
 
