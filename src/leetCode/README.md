@@ -11,6 +11,5 @@
 
 
 [0001]: https://leetcode.com/problems/two-sum/
-[0007]: 
 [0009]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/Easy/PalindromeNumber.java
 [0013]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/Easy/RomanToInteger.java
