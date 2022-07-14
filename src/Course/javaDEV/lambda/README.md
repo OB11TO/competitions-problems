@@ -8,3 +8,4 @@
 
 [0001]:https://github.com/OB11TO/JavaDrill/blob/main/src/Course/javaDEV/lambda/predicateTest/DeletingArrayString.java
 [0002]:https://github.com/OB11TO/JavaDrill/blob/main/src/Course/javaDEV/lambda/predicateTest/DeletingArrayString.java
+[0003]:https://github.com/OB11TO/JavaDrill/blob/main/src/Course/javaDEV/lambda/predicateTest/DeleteCat.java
