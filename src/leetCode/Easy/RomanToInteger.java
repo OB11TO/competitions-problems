@@ -32,7 +32,7 @@ import java.util.Map;
 public class RomanToInteger {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String number = "MCMXCIV";
+        String number = "III";
         int result = solution.romanToInt(number);
         System.out.println(result);
 
@@ -50,6 +50,16 @@ class Solution {
         map.put('D', 500);
         map.put('M', 1000);
 
-        return 0;
+        int len = s.length();
+        int sum = map.get(s.charAt(len - 1));
+
+        for(int i = len - 2; i >= 0; i--) {
+            if (map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
+                sum -= map.get(s.charAt(i));
+            } else {
+                sum += map.get(s.charAt(i));
+            }
+        }
+        return sum;
     }
 }
