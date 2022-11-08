@@ -1,5 +1,9 @@
 package Forces.GrokkingAlgorithms.p01_BinarySearch;
 
+/**
+ *  Бинарный поиск выполняется за логарифмическое время.
+ */
+
 public class BinarySearch {
 
     public static void main(String[] args) {
