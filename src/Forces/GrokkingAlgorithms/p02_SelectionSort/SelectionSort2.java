@@ -2,6 +2,10 @@ package Forces.GrokkingAlgorithms.p02_SelectionSort;
 
 import java.util.Arrays;
 
+/**
+ * Сортировка выбором улучшенная версия
+ */
+
 public class SelectionSort2 {
 
     // this version uses raw arrays instead of ArrayList

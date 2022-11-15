@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Сортировка выбором
+ */
+
 public class SelectionSort {
 
     public static void main(String[] args) {
@@ -17,10 +21,10 @@ public class SelectionSort {
 
         var size = arr.size();
         for (int i = 0; i < size; i++) {
-            int smallest = findSmallest(arr);
-            newArr.add(arr.get(smallest));
+            int smallestIndex = findSmallest(arr);
+            newArr.add(arr.get(smallestIndex));
 
-            arr.remove(smallest);
+            arr.remove(smallestIndex);
         }
 
         return newArr;
