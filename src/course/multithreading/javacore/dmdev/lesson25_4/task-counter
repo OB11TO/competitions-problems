@@ -26,3 +26,7 @@ counter.getCount()
 
 РЕШЕНИЕ
 Использовать atomic или synchronized
+
+"""""
+Если static, то можно сделать synchronized для класса
+"""""

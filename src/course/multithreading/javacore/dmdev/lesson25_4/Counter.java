@@ -9,7 +9,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Counter {
 
     //    private int count;
+    private static String description;
     private final AtomicInteger count = new AtomicInteger();
+
+    public static void init() {
+        synchronized (Counter.class) {
+            if (description == null) {
+                description = "Test";
+            }
+        }
+    }
 
     public void increment() {
 //        count++;  не атомарна
