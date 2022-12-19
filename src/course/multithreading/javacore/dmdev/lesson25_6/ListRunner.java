@@ -37,5 +37,6 @@ public class ListRunner {
         listThread7.join();
 
         System.out.println(integers);
+        System.out.println(integers.size());
     }
 }
