@@ -1,4 +1,4 @@
-package leetCode.Medium;
+package leetcode.medium;
 
 /**
  * You are given an m x n matrix maze (0-indexed) with empty cells (represented as '.')
