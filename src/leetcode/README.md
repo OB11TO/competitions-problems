@@ -15,5 +15,5 @@
 [0009]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/easy/PalindromeNumber.java
 [0013]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/easy/RomanToInteger.java
 [0100]: https://leetcode.com/problems/same-tree/
-[0014]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/easy/LongestCommonPrefix.java
+[0014]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetcode/easy/LongestCommonPrefix.java
 [0020]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetcode/easy/ValidParentheses.java
