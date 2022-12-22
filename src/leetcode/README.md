@@ -8,7 +8,7 @@
 | 4   | 13   | [Roman to Integer][0013]                                          | Math, String                                      |
 | 5   | 100  | [ Same Tree][0100]                                                | Tree, Depth-first Search                          |
 | 6   | 14   | [Longest Common Prefix][0014]                                     | String                                            |
-| 7   | 20   | [Valid Parentheses][0020]                                         | String                                            |
+| 7   | 20   | [Valid Parentheses][0020]                                         | String, Stack                                     |
 
 
 [0001]: https://leetcode.com/problems/two-sum/
