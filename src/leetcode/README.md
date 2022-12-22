@@ -12,8 +12,8 @@
 
 
 [0001]: https://leetcode.com/problems/two-sum/
-[0009]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/Easy/PalindromeNumber.java
-[0013]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/Easy/RomanToInteger.java
+[0009]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/easy/PalindromeNumber.java
+[0013]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/easy/RomanToInteger.java
 [0100]: https://leetcode.com/problems/same-tree/
-[0014]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/Easy/LongestCommonPrefix.java
-[0020]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/Easy/LongestCommonPrefix.java
+[0014]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/easy/LongestCommonPrefix.java
+[0020]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetcode/easy/ValidParentheses.java
