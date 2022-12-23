@@ -8,8 +8,8 @@ public class MergeTwoSortedLists {
 
     public static void main(String[] args) {
 
-        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
-        ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(42)));
+        ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(1, new ListNode(19)))));
         Solution1 solution = new Solution1(); //цикл
         Solution2 solution2 = new Solution2(); //рекурсия
         var listNode = solution.mergeTwoLists(list1, list2);
@@ -88,6 +88,7 @@ class Solution1 {
             current = current.next;
         }
 
+        current.next = list1 == null ? list2 :list1;
         return result.next;
     }
 }
