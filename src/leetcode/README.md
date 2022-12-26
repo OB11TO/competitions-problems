@@ -9,7 +9,8 @@
 | 5   | 100  | [ Same Tree][0100]                                                | Tree, Depth-first Search                          |
 | 6   | 14   | [Longest Common Prefix][0014]                                     | String                                            |
 | 7   | 20   | [Valid Parentheses][0020]                                         | String, Stack                                     |
-| 7   | 21   | [Merge Two Sorted Lists][0021]                                    | ListNode, String                                  |
+| 8   | 21   | [Merge Two Sorted Lists][0021]                                    | ListNode, String                                  |
+| 9   | 26   | [Remove Duplicates from Sorted Array][0026]                       | Array, Two index                                  |
 
 
 [0001]: https://leetcode.com/problems/two-sum/
