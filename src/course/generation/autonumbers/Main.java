@@ -11,7 +11,8 @@ public class Main {
         System.out.println(generate.getRandomPlateNumber());
         System.out.println(generate.getNextPlateNumber());
 
-//        for (int i = 1; i < 10; i++) {
-//        }
+        for (int i = 1; i < 9000; i++) {
+            System.out.println(generate.getNextPlateNumber());
+        }
     }
 }
