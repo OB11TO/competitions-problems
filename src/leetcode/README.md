@@ -11,6 +11,7 @@
 | 7   | 20   | [Valid Parentheses][0020]                                         | String, Stack                                     |
 | 8   | 21   | [Merge Two Sorted Lists][0021]                                    | ListNode, String                                  |
 | 9   | 26   | [Remove Duplicates from Sorted Array][0026]                       | Array, Two index                                  |
+| 9   | 27   | [Remove Element][0027]                                            | Array, Two index                                  |
 
 
 [0001]: https://leetcode.com/problems/two-sum/
