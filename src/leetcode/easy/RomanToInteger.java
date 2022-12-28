@@ -32,13 +32,33 @@ import java.util.Map;
 public class RomanToInteger {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String number = "III";
+        String number = "MCMXCIV";
         int result = solution.romanToInt(number);
         System.out.println(result);
-
+//
+//        int len = s.length();
+//        int sum = map.get(s.charAt(len - 1));
+//
+//        for(int i = len - 2; i >= 0; i--) {
+//            if (map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
+//                sum -= map.get(s.charAt(i));
+//            } else {
+//                sum += map.get(s.charAt(i));
+//            }
+//        }
     }
 }
 
+
+
+
+
+
+
+
+
+
+//XXVII
 class Solution {
     public int romanToInt(String s) {
         Map<Character, Integer> map = new HashMap<>();
@@ -50,14 +70,16 @@ class Solution {
         map.put('D', 500);
         map.put('M', 1000);
 
-        int len = s.length();
-        int sum = map.get(s.charAt(len - 1));
+        int end = s.length() - 1;
+        var sum = map.get(s.charAt(end));
 
-        for(int i = len - 2; i >= 0; i--) {
-            if (map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
-                sum -= map.get(s.charAt(i));
+        for (int i = end - 1; i >= 0; i--) {
+            var preElement = map.get(s.charAt(i));
+            var postElement = map.get(s.charAt(i + 1));
+            if(postElement > preElement) {
+                sum -= preElement;
             } else {
-                sum += map.get(s.charAt(i));
+                sum +=  preElement;
             }
         }
         return sum;
