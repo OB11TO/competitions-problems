@@ -13,6 +13,7 @@
 | 9   | 26   | [Remove Duplicates from Sorted Array][0026]                       | Array, Two index                                  |
 | 10  | 27   | [Remove Element][0027]                                            | Array, Two index                                  |
 | 11  | 35   | [SearchInsertPosition][0035]                                      | Binary Search                                     |
+| 11  | 58   | [Length of Last Word][0058]                                       | String                                            |
 
 
 [0001]: https://leetcode.com/problems/two-sum/
@@ -26,3 +27,4 @@
 [0026]: https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/865720733/
 [0027]: https://leetcode.com/problems/remove-element/submissions/866264498/
 [0035]: https://leetcode.com/problems/search-insert-position/submissions/866927921/
+[0058]: https://leetcode.com/problems/length-of-last-word/submissions/867450954/
