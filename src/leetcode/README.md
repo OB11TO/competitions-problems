@@ -15,6 +15,7 @@
 | 11  | 35   | [SearchInsertPosition][0035]                                      | Binary Search                                     |
 | 12  | 58   | [Length of Last Word][0058]                                       | String                                            |
 | 13  | 66   | [Plus One][0066]                                                  | int[]                                             |
+| 14  | 67   | [Add Binary][0067]                                                |                                           |
 
 
 [0001]: https://leetcode.com/problems/two-sum/
