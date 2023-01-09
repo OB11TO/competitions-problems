@@ -15,7 +15,8 @@
 | 11  | 35   | [SearchInsertPosition][0035]                                      | Binary Search                                     |
 | 12  | 58   | [Length of Last Word][0058]                                       | String                                            |
 | 13  | 66   | [Plus One][0066]                                                  | int[]                                             |
-| 14  | 67   | [Add Binary][0067]                                                |                                           |
+| 14  | 67   | [Add Binary][0067]                                                | String, Binary                                    |
+| 15  | 69   | [Sqrt(x)][0069]                                                   | Math                                              |
 
 
 [0001]: https://leetcode.com/problems/two-sum/
@@ -31,3 +32,4 @@
 [0035]: https://leetcode.com/problems/search-insert-position/submissions/866927921/
 [0058]: https://leetcode.com/problems/length-of-last-word/submissions/867450954/
 [0066]: https://leetcode.com/problems/plus-one/submissions/867509600/
+[0069]: https://leetcode.com/problems/sqrtx/
