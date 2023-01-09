@@ -20,7 +20,7 @@
 
 [0001]: https://leetcode.com/problems/two-sum/
 [0007]: https://leetcode.com/problems/reverse-integer/description/
-[0009]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetCode/easy/PalindromeNumber.java
+[0009]: https://leetcode.com/problems/palindrome-number/submissions/722146357/
 [0013]: https://leetcode.com/problems/roman-to-integer/submissions/866866191/
 [0100]: https://leetcode.com/problems/same-tree/
 [0014]: https://github.com/OB11TO/JavaDrill/blob/main/src/leetcode/easy/LongestCommonPrefix.java
