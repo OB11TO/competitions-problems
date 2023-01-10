@@ -17,6 +17,8 @@
 | 13  | 66   | [Plus One][0066]                                                  | int[]                                             |
 | 14  | 67   | [Add Binary][0067]                                                | String, Binary                                    |
 | 15  | 69   | [Sqrt(x)][0069]                                                   | Math                                              |
+|------------------------------------------------------------------------------------------------------------------------------------|
+| 16  | 217  | [Contains Duplicate][0217]                                        | Arrays & Hashing                                  |           |
 
 
 [0001]: https://leetcode.com/problems/two-sum/
@@ -33,3 +35,4 @@
 [0058]: https://leetcode.com/problems/length-of-last-word/submissions/867450954/
 [0066]: https://leetcode.com/problems/plus-one/submissions/867509600/
 [0069]: https://leetcode.com/problems/sqrtx/
+[0217]: https://leetcode.com/problems/contains-duplicate/
