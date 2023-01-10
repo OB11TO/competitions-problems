@@ -1,4 +1,4 @@
-## leetcode
+# competitions-problems
 
 [![last_commit](https://img.shields.io/github/last-commit/OB11TO/JavaDrill?style=flat&logo=github)](https://github.com/ololx/leetcode-solutions/commits)
 
