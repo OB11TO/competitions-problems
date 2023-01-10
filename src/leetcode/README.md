@@ -17,7 +17,7 @@
 | 13  | 66   | [Plus One][0066]                                                  | int[]                                             |
 | 14  | 67   | [Add Binary][0067]                                                | String, Binary                                    |
 | 15  | 69   | [Sqrt(x)][0069]                                                   | Math                                              |
-|                                                      [neetcode][1] |
+|                                                                                                                                    |
 | 16  | 217  | [Contains Duplicate][0217]                                        | Arrays & Hashing                                  |           
 
 
