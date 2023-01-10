@@ -1,24 +1,31 @@
-## easy
+## leetcode
 
-| № leetcode   | #    | Title                                                             | Tag                                               |
-| :-- | :--- | :---------------------------------------------------------------- | :------------------------------------------------ |
-| 1   | 1    | [Two Sum][0001]                                                   | Array, Hash Table                                 |
-| 2   | 7  - | [Reverse Integer][0007]                                           | Math                                              |
-| 3   | 9    | [Palindrome Number][0009]                                         | Math                                              |
-| 4   | 13   | [Roman to Integer][0013]                                          | Math, String                                      |
-| 5   | 100  | [ Same Tree][0100]                                                | Tree, Depth-first Search                          |
-| 6   | 14   | [Longest Common Prefix][0014]                                     | String                                            |
-| 7   | 20   | [Valid Parentheses][0020]                                         | String, Stack                                     |
-| 8   | 21   | [Merge Two Sorted Lists][0021]                                    | ListNode, String                                  |
-| 9   | 26   | [Remove Duplicates from Sorted Array][0026]                       | Array, Two index                                  |
-| 10  | 27   | [Remove Element][0027]                                            | Array, Two index                                  |
-| 11  | 35   | [SearchInsertPosition][0035]                                      | Binary Search                                     |
-| 12  | 58   | [Length of Last Word][0058]                                       | String                                            |
-| 13  | 66   | [Plus One][0066]                                                  | int[]                                             |
-| 14  | 67   | [Add Binary][0067]                                                | String, Binary                                    |
-| 15  | 69   | [Sqrt(x)][0069]                                                   | Math                                              |
-|                                                                                                                                    |
-| 16  | 217  | [Contains Duplicate][0217]                                        | Arrays & Hashing                                  |           
+(Добавить описание)
+<a href="https://leetcode.com/OBIITO/" target="_black">
+  <img align ="center" width ="100%" src="https://leetcode-stats-six.vercel.app/api?username=OBIITO" alt="leetcode" />
+</a>
+
+
+## Problems
+| № leetcode | #    | Title                                                      | Tag                                               | Difficulty |
+| :-- | :--- | :---------------------------------------------------------------- | :------------------------------------------------ | :----|
+| 1   | 1    | [Two Sum][0001]                                                   | Array, Hash Table                                 |Easy|
+| 2   | 7  - | [Reverse Integer][0007]                                           | Math                                              |Easy|
+| 3   | 9    | [Palindrome Number][0009]                                         | Math                                              |Easy|
+| 4   | 13   | [Roman to Integer][0013]                                          | Math, String                                      |Easy|
+| 5   | 100  | [ Same Tree][0100]                                                | Tree, Depth-first Search                          |Easy|
+| 6   | 14   | [Longest Common Prefix][0014]                                     | String                                            |Easy|
+| 7   | 20   | [Valid Parentheses][0020]                                         | String, Stack                                     |Easy|
+| 8   | 21   | [Merge Two Sorted Lists][0021]                                    | ListNode, String                                  |Easy|
+| 9   | 26   | [Remove Duplicates from Sorted Array][0026]                       | Array, Two index                                  |Easy|
+| 10  | 27   | [Remove Element][0027]                                            | Array, Two index                                  |Easy|
+| 11  | 35   | [SearchInsertPosition][0035]                                      | Binary Search                                     |Easy|
+| 12  | 58   | [Length of Last Word][0058]                                       | String                                            |Easy|
+| 13  | 66   | [Plus One][0066]                                                  | int[]                                             |Easy|
+| 14  | 67 - | [Add Binary][0067]                                                | String, Binary                                    |Easy|
+| 15  | 69   | [Sqrt(x)][0069]                                                   | Math                                              |Easy|
+|                                                                                                                                        .|
+| 16  | 217  | [Contains Duplicate][0217]                                        | Arrays & Hashing                                  |Easy|          
 
 
 [1]: https://neetcode.io/roadmap
