@@ -28,6 +28,7 @@
 | 15  | 69   | [Sqrt(x)][0069]                                                   | Math                                              |Easy|
 |                                                                                                                                        .|
 | 16  | 217  | [Contains Duplicate][0217]                                        | Arrays & Hashing                                  |Easy|          
+| 17  | 242  | [Valid Anagram][0242]                                             | Arrays & Hashing                                  |Easy|          
 
 
 [1]: https://neetcode.io/roadmap
@@ -46,3 +47,4 @@
 [0066]: https://leetcode.com/problems/plus-one/submissions/867509600/
 [0069]: https://leetcode.com/problems/sqrtx/
 [0217]: https://leetcode.com/problems/contains-duplicate/
+[0242]: https://leetcode.com/problems/valid-anagram/
