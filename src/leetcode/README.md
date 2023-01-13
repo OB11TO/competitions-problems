@@ -29,6 +29,7 @@
 |                                                                                                                                        .|
 | 16  | 217  | [Contains Duplicate][0217]                                        | Arrays & Hashing                                  |Easy|          
 | 17  | 242  | [Valid Anagram][0242]                                             | Arrays & Hashing                                  |Easy|          
+| 18  | 49   | [Group Anagrams][0049]                                             | Arrays & Hashing                                  |Medium|          
 
 
 [1]: https://neetcode.io/roadmap
@@ -48,3 +49,4 @@
 [0069]: https://leetcode.com/problems/sqrtx/
 [0217]: https://leetcode.com/problems/contains-duplicate/
 [0242]: https://leetcode.com/problems/valid-anagram/
+[0049]: https://leetcode.com/problems/group-anagrams/
