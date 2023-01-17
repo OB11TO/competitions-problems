@@ -32,7 +32,8 @@
 | 16  | 217  | [Contains Duplicate][0217]                                        | Arrays & Hashing                                  |Easy|          
 | 17  | 242  | [Valid Anagram][0242]                                             | Arrays & Hashing                                  |Easy|          
 | 18  | 49   | [Group Anagrams][0049]                                            | Arrays & Hashing                                 |Medium|          
-| 19  | 347  | [Top K Frequent Elements][0347]                              | Arrays & Hashing                                 |Medium|
+| 19  | 347  | [Top K Frequent Elements][0347]                                   | Arrays & Hashing                                 |Medium|
+| 20  | 238  | [Product of Array Except Self][0238]                              | Arrays & Hashing                                 |Medium|
 
 
 [1]: https://neetcode.io/roadmap
@@ -54,3 +55,4 @@
 [0242]: https://leetcode.com/problems/valid-anagram/
 [0049]: https://leetcode.com/problems/group-anagrams/
 [0347]: https://leetcode.com/problems/top-k-frequent-elements/
+[0238]: https://leetcode.com/problems/product-of-array-except-self/
