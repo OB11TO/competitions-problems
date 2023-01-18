@@ -34,6 +34,8 @@
 | 18  | 49   | [Group Anagrams][0049]                                            | Arrays & Hashing                                 |Medium|          
 | 19  | 347  | [Top K Frequent Elements][0347]                                   | Arrays & Hashing                                 |Medium|
 | 20  | 238  | [Product of Array Except Self][0238]                              | Arrays & Hashing                                 |Medium|
+| 21  | 128  | [Longest Consecutive Sequence][0128]                              | Arrays & Hashing                                 |Medium|
+| 22  | 125  | [Valid Palindrome][0125]                                          | Two Pointers                                      |Easy|
 
 
 [1]: https://neetcode.io/roadmap
@@ -56,3 +58,5 @@
 [0049]: https://leetcode.com/problems/group-anagrams/
 [0347]: https://leetcode.com/problems/top-k-frequent-elements/
 [0238]: https://leetcode.com/problems/product-of-array-except-self/
+[0128]: https://leetcode.com/problems/longest-consecutive-sequence/
+[0125]: https://leetcode.com/problems/valid-palindrome/
