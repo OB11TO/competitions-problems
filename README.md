@@ -36,6 +36,7 @@
 | 20  | 238  | [Product of Array Except Self][0238]                              | Arrays & Hashing                                 |Medium|
 | 21  | 128  | [Longest Consecutive Sequence][0128]                              | Arrays & Hashing                                 |Medium|
 | 22  | 125  | [Valid Palindrome][0125]                                          | Two Pointers                                      |Easy|
+| 23  | 167  | [Two Sum II - Input Array Is Sorted][0167]                        | Two Pointers                                     |Medium|
 
 
 [1]: https://neetcode.io/roadmap
@@ -60,3 +61,4 @@
 [0238]: https://leetcode.com/problems/product-of-array-except-self/
 [0128]: https://leetcode.com/problems/longest-consecutive-sequence/
 [0125]: https://leetcode.com/problems/valid-palindrome/
+[0167]: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
