@@ -1,6 +1,6 @@
 # competitions-problems 🏆🌈
 
-[![last_commit](https://img.shields.io/github/last-commit/OB11TO/JavaDrill?style=flat&logo=github)](https://github.com/ololx/leetcode-solutions/commits)
+[![last_commit](https://img.shields.io/github/last-commit/OB11TO/JavaDrill?style=flat&logo=github)](https://github.com/OB11TO/competitions-problems/commits)
 
 ![repo_size](https://img.shields.io/github/repo-size/OB11TO/JavaDrill?style=flat&logo=github) ![languages_code_size](https://img.shields.io/github/languages/code-size/OB11TO/JavaDrill?style=flat&logo=github) ![languages_count](https://img.shields.io/github/languages/top/OB11TO/JavaDrill?style=flat&logo=github)
 
