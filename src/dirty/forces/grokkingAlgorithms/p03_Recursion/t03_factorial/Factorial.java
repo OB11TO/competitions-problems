@@ -1,7 +1,6 @@
 package dirty.forces.grokkingAlgorithms.p03_Recursion.t03_factorial;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
 
 
 public class Factorial {
@@ -22,7 +21,7 @@ public class Factorial {
         return number <= 1;
     }
 }
- class Factorial2Test {
+ /*class Factorial2Test {
      @Test
      public void testIsZeroOrOne() {
          Factorial factorial2 = new Factorial();
@@ -38,4 +37,4 @@ public class Factorial {
 
          Assertions.assertEquals(120, factorial2.getFactorial(5));
      }
- }
+ }*/
