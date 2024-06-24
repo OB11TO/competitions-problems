@@ -37,7 +37,7 @@ public class MajorElement {
             } else {
                 map.put(nums[i], 1);
             }
-            if(map.get(nums[i]) > majority) {
+            if(map.get(nums[i]) > majority)) {
                 result = nums[i];
                 majority = map.get(nums[i]);
             }
