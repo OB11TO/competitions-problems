@@ -1,17 +1,17 @@
 package leetcode.easy.linkedList;
 
-public class ListNode1 {
+public class ListNode {
     int val;
-    ListNode1 next;
+    ListNode next;
 
-    ListNode1() {
+    ListNode() {
     }
 
-    ListNode1(int val) {
+    ListNode(int val) {
         this.val = val;
     }
 
-    ListNode1(int val, ListNode1 next) {
+    ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }

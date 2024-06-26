@@ -19,11 +19,11 @@ package leetcode.easy.linkedList;
  */
 public class RemoveDuplicatesFromSortedList {
     public static void main(String[] args) {
-        System.out.println(deleteDuplicates(new ListNode1(1, new ListNode1(1, new ListNode1(1, new ListNode1(1, new ListNode1(3)))))));
+        System.out.println(deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(3)))))));
     }
 
-    public static ListNode1 deleteDuplicates(ListNode1 head) {
-        ListNode1 current = head;
+    public static ListNode deleteDuplicates(ListNode head) {
+        ListNode current = head;
         while (head != null) {
             while (head.next != null && head.val == head.next.val) {
                 head.next = head.next.next;
