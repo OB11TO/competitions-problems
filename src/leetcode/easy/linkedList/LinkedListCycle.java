@@ -10,6 +10,19 @@ public class LinkedListCycle {
         System.out.println(hasCycle(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(2))))));
     }
 
+    public boolean hasCycle1(ListNode head) {
+        if (head == null || head.next == null) return false;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) return true;
+
+        }
+        return false;
+    }
+
     public static boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
