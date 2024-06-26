@@ -1,8 +1,4 @@
-package leetcode.easy;
-
-import java.awt.*;
-import java.util.Arrays;
-import java.util.Collections;
+package leetcode.easy.other;
 
 public class MergeTwoSortedLists {
 

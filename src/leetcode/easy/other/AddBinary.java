@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.easy.other;
 
 /**
  * Given two binary strings a and b, return their sum as a binary string.

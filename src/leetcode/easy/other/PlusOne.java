@@ -1,7 +1,5 @@
-package leetcode.easy;
+package leetcode.easy.other;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Arrays;
 
 public class PlusOne {
