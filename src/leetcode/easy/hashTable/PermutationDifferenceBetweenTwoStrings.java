@@ -22,7 +22,7 @@ public class PermutationDifferenceBetweenTwoStrings {
         }
 
         for(Map.Entry<Character, Integer> element : map1.entrySet()) {
-            Character ch = element.getKey();
+            Character ch = element.getKey(); 
             result = result + Math.abs(element.getValue() - map2.get(ch));
         }
         return result;
