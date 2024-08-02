@@ -1,5 +1,8 @@
 package leetcode.easy.twoPointers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 Input: word = "abcdefd", ch = "d"
 Output: "dcbaefd"
@@ -9,10 +12,27 @@ Reverse the part of word from 0 to 3 (inclusive), the resulting string is "dcbae
 public class ReversePrefixWord {
 
     public static void main(String[] args) {
-        System.out.println(reversePrefix2("abcdefd", 'd'));
-        System.out.println(reversePrefix2("xyxzxe", 'z'));
-        System.out.println(reversePrefix2("abcd", 'z'));
-        System.out.println(reversePrefix2("j", 'j'));
+
+        List<Person> list = new ArrayList<>();
+        list.add(new Person());
+
+
+        List<Person> collect = list.stream()
+                .filter(person -> person.getX1() == 10)
+                .limit(12)
+                .peek(person -> person.setX2((short) 5))
+                .toList();
+
+//        Stream.of(0, 3, 0, 0, 5)
+//                .peek(x -> System.out.format("before distinct: %d%n", x))
+//                .distinct()
+//                .peek(x -> System.out.format("after distinct: %d%n", x))
+//                .map(x -> x * x)
+//                .forEach(x -> System.out.format("after map: %d%n", x));
+//        System.out.println(reversePrefix2("abcdefd", 'd'));
+//        System.out.println(reversePrefix2("xyxzxe", 'z'));
+//        System.out.println(reversePrefix2("abcd", 'z'));
+//        System.out.println(reversePrefix2("j", 'j'));
     }
 
     /**
@@ -73,4 +93,26 @@ public class ReversePrefixWord {
         }
         return new String(chars);
     }
+}
+
+class Person {
+    public int x1;
+
+    public int getX1() {
+        return x1;
+    }
+
+    public void setX1(int x1) {
+        this.x1 = x1;
+    }
+
+    public short getX2() {
+        return x2;
+    }
+
+    public void setX2(short x2) {
+        this.x2 = x2;
+    }
+
+    public short x2;
 }
